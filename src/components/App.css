@@ -60,3 +60,7 @@ i.icon {
   font-size: 20px;
   cursor: pointer;
 }
+
+h2 button {
+  float: right;
+}
