@@ -64,3 +64,10 @@ i.icon {
 h2 button {
   float: right;
 }
+
+.center-div {
+  position: relative;
+  left: 52%;
+  margin-top: 15px;
+  margin-left: -100px;
+}
