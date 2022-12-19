@@ -13,9 +13,10 @@ function App() {
   const [contacts, setContacts] = useState([]);
 
 //RetrieveContacts
-const retrieveContacts = () => {
-  const response = 
-}
+const retrieveContacts = async () => {
+  const response = await api.get("/contacts");
+  return response.data;
+};
 
   const addContactHandler = (contact) => {
     console.log(contact);
