@@ -20,6 +20,7 @@ const retrieveContacts = async () => {
 
   const addContactHandler = (contact) => {
     console.log(contact);
+    
     setContacts([...contacts, { id: uuid(), ...contact }]);
   };
 
@@ -34,10 +35,16 @@ const retrieveContacts = async () => {
   useEffect(() => {
     // const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     // if (retriveContacts) setContacts(retriveContacts);
+    const getAllContacts = async() => {
+      const allContacts = await retrieveContacts();
+      if (allContacts) setContacts(allContacts);
+    };
+
+    getAllContacts();
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
+    // localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
   }, [contacts]);
 
   return (
