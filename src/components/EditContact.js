@@ -1,10 +1,15 @@
 import React from "react";
 
 class EditContact extends React.Component {
-  state = {
-    name: "",
-    email: "",
+ constructor(props) {
+  super(props)
+  const { id, name, email } = props.location.state.contact;
+  this.state = {
+    id,
+    name,
+    email,
   };
+ }
 
   update = (e) => {
     e.preventDefault();

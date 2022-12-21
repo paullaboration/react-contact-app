@@ -5,6 +5,7 @@ import api from '../api/contacts';
 import "./App.css";
 import Header from "./Header";
 import AddContact from "./AddContact";
+import EditContact from "./EditContact";
 import ContactList from "./ContactList";
 import ContactDetail from "./ContactDetail";
 
@@ -29,6 +30,8 @@ const addContactHandler = async (contact) => {
     console.log(response);
     setContacts([...contacts, response.data]);
   };
+
+  const updateContactHandler = () => {};
 
   const removeContactHandler = async (id) => {
     await api.delete(`/contacts/${id}`);
@@ -79,6 +82,17 @@ const addContactHandler = async (contact) => {
              />
              )}
           />
+          
+          <Route 
+          path="/edit" 
+          render={(props) => (
+          <EditContact 
+            {...props}
+            updateContactHandler={updateContactHandler}
+             />
+             )}
+          />
+
           <Route path="/contact/:id" component={ContactDetail} />
         </Switch>
       </Router>
