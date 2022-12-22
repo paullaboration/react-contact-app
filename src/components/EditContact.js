@@ -17,7 +17,7 @@ class EditContact extends React.Component {
       alert("ALl the fields are mandatory!");
       return;
     }
-    this.props.addContactHandler(this.state);
+    this.props.updateContactHandler(this.state);
     this.setState({ name: "", email: "" });
     this.props.history.push("/");
   };
