@@ -24,7 +24,7 @@ class EditContact extends React.Component {
   render() {
     return (
       <div className="ui main">
-        <h2>Add Contact</h2>
+        <h2>Edit Contact</h2>
         <form className="ui form" onSubmit={this.update}>
           <div className="field">
             <label>Name</label>
