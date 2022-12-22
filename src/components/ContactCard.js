@@ -25,7 +25,6 @@ const ContactCard = (props) => {
       <i
         className="edit alternate outline icon"
         style={{ color: "blue", marginTop: "7px" }}
-        onClick={() => props.clickHander(id)}
       ></i>
       </Link>
     </div>
