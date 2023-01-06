@@ -32,17 +32,11 @@ const ContactList = (props) => {
     </h2>
     <div className="ui search">
       <div className="ui icon input">
-        <input 
-        ref={ inputEl }
-        type="text" 
-        placeholder="Search Contacts" 
-        className="prompt" 
-        value={ props.term } 
-        onChange={ getSearchTerm } />
+        <input type="text" placeholder="Search Contacts" className="prompt" />
      <i className="search icon"></i>
       </div>
     </div>
-  <div className="ui celled list">{renderContactList.length > 0 ? renderContactList: "No Contact Available"}</div>
+  <div className="ui celled list">{renderContactList}</div>
   </div>
   );
 };
