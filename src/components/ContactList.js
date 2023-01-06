@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import ContactCard from "./ContactCard";
 
 const ContactList = (props) => {
-  const inputEl = useRef("");
+  console.log(props);
+
   const deleteContactHandler = (id) => {
     props.getContactId(id);
   };
@@ -17,11 +18,6 @@ const ContactList = (props) => {
       />
     );
   });
-
-  const getSearchTerm = () => {
-    props.searchKeyword(inputEl.current.value);
-  }
-
   return (
   <div class="main">
     <h2>
@@ -30,6 +26,15 @@ const ContactList = (props) => {
       <button className="ui button blue">Add Contact</button>
       </Link>
     </h2>
+<<<<<<< HEAD
+=======
+    <div className="ui search">
+      <div className="ui icon input">
+        <input type="text" placeholder="Search Contacts" className="prompt" />
+     <i className="search icon"></i>
+      </div>
+    </div>
+>>>>>>> parent of bbdeb18 (search updated)
   <div className="ui celled list">{renderContactList}</div>
   </div>
   );
